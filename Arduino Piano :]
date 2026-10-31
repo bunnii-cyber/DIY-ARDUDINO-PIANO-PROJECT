@@ -1,0 +1,54 @@
+//super awesome code
+
+const int speakerPin = 2;
+const int note1Pin = 3;
+const int note2Pin = 4;
+const int note3Pin = 5;
+const int note4Pin = 6;
+const int note5Pin = 7;
+
+   // conductive tape switch
+
+
+#define NOTE_CF 262
+#define NOTE_E4 330
+// DEFINE OTHER NOTES HERE
+
+
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(note1Pin, INPUT_PULLUP); // DECLARING THE PIN MODE HERE
+  pinMode(note2Pin, INPUT_PULLUP);  // internal pull-up: HIGH when open, LOW when tape touches
+}
+
+void loop() {
+  int pressedN1 = (digitalRead(note1Pin) == LOW);
+    int pressedN2 = (digitalRead(note2Pin) == LOW);
+     int pressedN3 = (digitalRead(note3Pin) == LOW);
+      int pressedN4 = (digitalRead(note4Pin) == LOW);
+       int pressed5 = (digitalRead(note5Pin) == LOW);
+
+
+
+
+  //i(digitalRead(notePin) == LOW);
+  Serial.println(pressed);
+
+  if (pressedN1) {
+     
+      tone(speakerPin,NOTE_CF, 200);
+      delay(200);
+  } else
+  noTone(speakerPin);
+
+  if (pressedN2) {
+     
+      tone(speakerPin,NOTE_E4, 200);
+      delay(200);
+  } else
+  noTone(speakerPin);
+
+
+
+}
